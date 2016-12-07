@@ -20,6 +20,7 @@ from indexapp.views import *
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'^$', index),
+    url(r'^index.html$', index),
     url(r'^learn.html$', learn),
     url(r'^work.html$', work),
 ]
