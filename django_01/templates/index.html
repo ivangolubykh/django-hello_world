@@ -2,9 +2,14 @@
 <html>
 <head>
 	<!--saved from https://github.com/ivangolubykh/django-hello_world -->
-	<title>Личный сайт студента GeekBrains</title>
-	<meta charset="utf-8">
 	{% load staticfiles %}
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/ico" href="{% static 'indexapp/favicon/favicon.ico' %}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{% static 'indexapp/favicon/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" href="{% static 'indexapp/favicon/favicon-32x32.png' %}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{% static 'indexapp/favicon/favicon-16x16.png' %}" sizes="16x16">
+	<meta name="theme-color" content="#ffffff">
+	<title>Личный сайт студента GeekBrains</title>
 	<link rel="stylesheet" href="{% static 'indexapp/style.css' %}">
 </head>
 <body>
