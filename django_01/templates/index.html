@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!--saved from https://github.com/ivangolubykh/django-hello_world -->
 	<title>Личный сайт студента GeekBrains</title>
 	<meta charset="utf-8">
-	<!--<link rel="stylesheet" href="style.css">-->
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'indexapp/style.css' %}">
 </head>
@@ -105,7 +105,7 @@
 	<div id="content">
 		<h1>Личный сайт студента GeekBrains</h1>
 		<div id="center">
-			<img src="img/ivan-tenerife.gif"></img>
+			<img src="{% static 'indexapp/img/ivan-tenerife.gif' %}"></img>
 			<div id="box_text">
 				<p>
 				Добрый день. Меня зовут <b>Иван Голубых</b>. Я - <i>программист</i>. Этот сайт создан в рамках курса по основам программирования (Java Script, HTML&amp;CSS)
