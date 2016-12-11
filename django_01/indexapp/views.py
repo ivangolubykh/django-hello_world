@@ -1,9 +1,10 @@
 from django.shortcuts import render, render_to_response
-
+from datetime import datetime, date
 # Create your views here.
 
 def index(request):
-    return render_to_response("index.html")
+    birth_date = date(1979, 8, 7)
+    return render_to_response("index.html", {'birth_date': birth_date})
 
 
 def learn(request):
