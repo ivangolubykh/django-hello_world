@@ -13,14 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from indexapp.views import *
+from django.views.generic.base import RedirectView # для редиректа с главной страницы в папку
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^$', index),
-    url(r'^index.html$', index),
-    url(r'^learn.html$', learn),
-    url(r'^work.html$', work),
+    url(r'^$', RedirectView.as_view(url='django/profile_ig/')), # редирект с главной страницы в папку
+    url(r'^django/profile_ig/', include([
+        url(r'^$', index, name='index'),
+        url(r'^learn/$', learn, name='learn'),
+        url(r'^work/$', work, name='work'),
+    ])),
 ]

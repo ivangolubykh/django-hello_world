@@ -1,131 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<!--saved from https://github.com/ivangolubykh/django-hello_world -->
-	{% load staticfiles %}
-	<meta charset="utf-8">
-	<link rel="shortcut icon" type="image/ico" href="{% static 'indexapp/favicon/favicon.ico' %}">
-	<link rel="apple-touch-icon" sizes="120x120" href="{% static 'indexapp/favicon/apple-touch-icon.png' %}">
-	<link rel="icon" type="image/png" href="{% static 'indexapp/favicon/favicon-32x32.png' %}" sizes="32x32">
-	<link rel="icon" type="image/png" href="{% static 'indexapp/favicon/favicon-16x16.png' %}" sizes="16x16">
-	<meta name="theme-color" content="#ffffff">
-	<title>Личный сайт студента GeekBrains</title>
-	<link rel="stylesheet" href="{% static 'indexapp/style.css' %}">
-</head>
-<body>
+{% extends "base.html" %}
+{% load staticfiles %}
 
-	<script type="text/javascript">
-// https://jsfiddle.net/
 
-//	var answer = Match.random(); // случайное число от 0 до 1
-//	var answer = parseInt(Match.random() * 100); // случайное целое число от 0 до 100
-//	eur.toFixed(2) // округление до 2 знаков после запятой
-		function start_program() {
+{% block title %}Учёба - Голубых Иван Борисович{% endblock %}
 
-			var selection = parseInt(prompt("Введите:\n1 для выбора конверетра валют;\n2 для игры в загадки;\n3 для вычисления уравнения\n4 банковская программа (рассчёт прибыли по вкладу)."));
-			if (selection == 1) {
-				conv_curr();
-			}
-			else if (selection == 2) {
-				arcana();
-			}
-			else if (selection == 3) {
-				equation();
-			}
-			else if (selection == 4) {
-				bank_prog();
-			}
-			else {
-				alert("Ответ не распознан.");
-			}
-		}
 
-		function conv_curr() {
-			var eur = 69.29; // Курс Евро
-			var doll = 63.22; // Курс Доллара
-			var rub = +(prompt("Введите сумму в рублях (только число):"));
-			if (rub >= 0) {
-				alert("Ваша сумма " + rub + " рубля(ей) после пересчёта составляет:\n " + (rub / doll).toFixed(2) + " долларов (по курсу " + doll + ")\n " + (rub / eur).toFixed(2) + " евро (по курсу " + eur + ")");
-			}
-			else {
-				alert("Нужно было ввести число (только число - количество рублей)");
-			}
-		}
-
-		function arcana_template(question, answer) {
-			var user_answer = prompt(question);
-			if ( user_answer.toLowerCase() == answer.toLowerCase() ) {
-				alert("Поздравляю! Вы угадали. Теперь перейдем к следующей загадке.");
-				return 1;
-			}
-			else {
-				alert("Вы не угадали. Теперь перейдем к следующей загадке.");
-				return 0;
-			}
-		}
-
-		function arcana() {
-			var count = 0;
-			count += arcana_template("Первая загадка:\n С какой птицы нужно ощипать перья, чтобы получились сразу и утро, и день, и вечер, и ночь?", "с утки");
-
-			count += arcana_template("Вторая загадка:\n Под каким деревом сидит волк, когда идет дождь?", "под мокрым");
-
-			count += arcana_template("Третья загадка:\n На теле – два уха, а головы нет.", "кастрюля");
-
-			count += arcana_template("Четвёртая (последняя) загадка:\n Что достанет зубами затылок?", "расчёска");
-
-			alert("Было задано 4 загадки. Общее количесвто правильных ответов: " + count);
-		}
-
-		function equation() {
-			var a = 2;
-			var b = -1;
-			var c = 4;
-			var x = prompt("Вычисляем значение уравнения y=a*x^2+b*x+c, где a=" + a + ", b=" + b + ", c=" + c + ". Введите значение переменной x:");
-			alert('При x="' + x + '" формула "y=(' + a + ')*x^2+(' + b + ')*x+(' + c + ')", равна ' + ((a*x*x) + b*x + c) );
-		}
-
-		function bank_prog() {
-			var deposit = +prompt("Введите сумму вклада:");
-			var percent = +prompt("Введите годовой процент по вкладу:");
-			var time = 5;
-			var sum = [];
-			sum[0] = deposit;
-			var result = 'Размер вклада на ближайшие 5 лет:';
-			for (var i = 1; i <= time; i++) {
-				sum[i] = (sum[i-1] * (100 + percent) / 100).toFixed(2);
-				result += '\n' + i + ' год: ' + sum[i]
-			}
-			alert(result);
-		}
-
-	</script>
-
-	<div id="header">
-		<a href="index.html">Главная</a> <span>/</span>
-		<a href="learn.html">Учёба</a> <span>/</span>
-		<a href="work.html">Работа</a> <span>/</span>
-		<a href="javascript:arcana();">Загадки</a> <span>/</span>
-		<a href="javascript:start_program();">Все программы</a> <span>/</span>
-	</div>
-
-	<div id="content">
-		<h1>Голубых Иван Борисович - Учёба</h1>
-		<div id="center">
-			<img src="{% static 'indexapp/img/ivan-tenerife.gif' %}"></img>
-			<div id="box_text">
-				<p>В 2016 году прошел целый комплекс курсов и тестов про программированию, полный список которых можно увидеть <a href="https://geekbrains.ru/users/1169403" target="_blank">в моем профиле</a></p>
-				<p>В 2016 году, 25 августа получил педагогическое образование в <a href="http://irospb.ru/" target="_blank">Институте развития образования</a>, дополнительная профессиональная программа профессиональной переподготовки «ОБРАЗОВАНИЕ И ПЕДАГОГИКА: теория и методика обучения информатике».</p>
-				<p>В 2001 году окончил <a href="http://www.pgups.ru/" target="_blank">Петербургский государственный университет путей сообщения Императора Александра I</a>, присуждена квалификация инженер по специальности "Водоснабжение и водоотведение"</p>
-				<p>В 1996 году окончил <a href="http://sch556.spb.ru/" target="_blank">Государственное бюджетное общеобразовательное учреждение
-					средняя общеобразовательная школа №556 с углублённым изучением английского языка Курортного района Санкт-Петербурга</a></p>
-			</div>
-		</div>
-	</div>
-
-	<div id="footer">
-	Copyright © 2016 <a href="https://geekbrains.ru/">GeekBrains </a>
-	</div>
-
-</body>
-</html>
+{% block contetnt %}
+    <h1>Иван Борисович Голубых - Учёба</h1>
+    <div class="img_myfoto">
+        <img src="{% static 'indexapp/img/ivan-tenerife.gif' %}"></img>
+    </div><!--
+    --><div>
+        {% if not learn_chronology %}
+        <p>Данные о моей учёбе недоступны в настощее время.</p>
+        {% else %}
+            {% for learn in learn_chronology reversed %}
+                <p>{{learn|safe}}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
