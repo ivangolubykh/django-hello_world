@@ -102,21 +102,24 @@
 
 	</script>
 
-	<header>
-		<a href="{% url 'index' %}">Главная</a> <span>/</span>
-		<a href="{% url 'learn' %}">Учёба</a> <span>/</span>
-		<a href="{% url 'work' %}">Работа</a> <span>/</span>
-		<a href="javascript:arcana();">Загадки</a> <span>/</span>
-		<a href="javascript:start_program();">Все программы</a> <span>/</span>
-	</header>
+	<div class="wrapper_over_footer">
+		<header>
+			<a href="{% url 'index' %}">Главная</a> <span>/</span>
+			<a href="{% url 'learn' %}">Учёба</a> <span>/</span>
+			<a href="{% url 'work' %}">Работа</a> <span>/</span>
+			<a href="javascript:arcana();">Загадки</a> <span>/</span>
+			<a href="javascript:start_program();">Все программы</a>
+		</header>
 
-	<section>
-		{% block contetnt %}
-		{% endblock %}
-	</section>
+		<section class="content">
+			{% block contetnt %}
+			{% endblock %}
+		</section>
+	</div>
 
 	<footer>
-	Copyright © 2016 <a href="http://allworld.xyz/django/profile_ig/" target="_blank">Иван Борисович Голубых</a>
+		<div class="nothing"></div>
+		<p>Copyright © 2016 <a href="http://allworld.xyz/django/profile_ig/" target="_blank">Иван Борисович Голубых</a></p>
 	</footer>
 
 </body>

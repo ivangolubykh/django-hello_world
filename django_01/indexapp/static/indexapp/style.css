@@ -5,61 +5,61 @@
     padding: 0;
 }
 
-body { 
+html,
+body {
+  height: 100%;
+}
+
+body {
+	width: 100%;
+	max-width: 1280px;
+	min-width: 300px;
+	margin: 0 auto;
     background-color: #f7f7f7;
     font-family: 'Roboto', sans-serif;
+}
+
+.wrapper_over_footer {
+    min-height: 100%;
 }
 
 header {
     border: 1px solid #b5b7ba;
     background-color: #dfdfdf;
-    /*min-width: 1280px;*/
-    height: 50px;
     text-align: center;
-    padding-top: 18px;
-}
-
-header #selected {
-    color: #000;
-}
-
-#center {
-    /*width: 1280px;*/
-    margin: 0 auto;
+    padding: 10px 0 10px 0;
 }
 
 header a {
-    color: #4d4d4d;
+    color: #000;
     font-size: 20px;
     font-weight: 100;
-    text-align: left;
     text-decoration: none;
-    height: 30px;
-    line-height: 30px;
     display: inline-block;
 }
 
 header span {
-    padding: 0 38px;
+    padding: 0 15px;
 }
 
-section {
-    height: 806px;
-    /*min-width: 1200px;*/
-    margin: 0 auto;
+.content {
+	line-height: 1;
 }
 
-section h1 {
-    /*min-width: 1200px;*/
+.content h1 {
     text-align: center;
     color: #2e353d;
     font-size: 40px;
     font-weight: 300;
-    margin-top: 63px;
-    margin-bottom: 75px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-section h3 {
+
+
+
+
+.content h3 {
     color: #242424;
     font-size: 35px;
     font-weight: 300;
@@ -68,24 +68,24 @@ section h3 {
     margin-bottom: 52px;
 }
 
-section h5 {
+.content h5 {
     color:  #242424;
     font-size: 24px;
     text-align: left;
 }
 
-section img {
+.content img {
     margin-left: 17px;
 }
 
-section #box_text {
+.content #box_text {
     width: 671px;
     background-color: #ffffff;
     float: right;
     padding: 49px 48px 51px 76px;
 }
 
-section #box_text p {
+.content #box_text p {
     color: #242424;
     font-size: 24px;
     font-weight: 100;
@@ -93,7 +93,7 @@ section #box_text p {
     margin-bottom: 31px;
 }
 
-section #box_text a  {
+.content #box_text a  {
     color: #40678a;
     font-size: 24px;
     font-weight: 100;
@@ -103,11 +103,11 @@ section #box_text a  {
 }
 
 
-section .media {
+.content .media {
     margin-right: 0;
 }
 
-section #box {
+.content #box {
     background-color: #ffffff;
     /*width: 1238px;*/
     height: 446px;
@@ -116,7 +116,7 @@ section #box {
     padding-left: 38px;
 }
 
-section #box p {
+.content #box p {
     color: #242424;
     font-size: 24px;
     font-weight: 100;
@@ -125,7 +125,7 @@ section #box p {
     margin-bottom: 30px;
 }
 
-section #box input {
+.content #box input {
     border: 1px solid #a0a0a0;
     background-color: #f5f5f5;
     width: 457px;
@@ -136,7 +136,7 @@ section #box input {
     margin-bottom: 12px;
 }
 
-section #box a {
+.content #box a {
     display: block;
     float: left;
     background-color:  #8cbbd3;
@@ -149,20 +149,35 @@ section #box a {
     padding:11px 51px;
 }
 
-section #box a:hover {
+.content #box a:hover {
     background-color: #5ba1d3;
 }
 
+
+
+
+
 footer {
-    background-color: #434445;
-    /*min-width: 1920px;*/
-    height: 140px;
-    margin: 0 auto;
+    height: 70px;
+    margin-top: -72px;
+    background-color: #C0C0C0;
+    border: 1px solid #b5b7ba;
     text-align: center;
-    color: #a4a4a4;
+    color: #010435;
     font-size: 20px;
     font-weight: 100;
-    line-height: 140px;
+}
+
+footer .nothing {
+	display: inline-block;
+	height: 100%;
+	width: 0;
+	vertical-align: middle;
+}
+
+footer p {
+	vertical-align: middle;
+    display: inline-block;
 }
 
 footer a {
