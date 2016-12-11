@@ -14,16 +14,13 @@
 			Личный сайт Ивана Борисовича Голубых
 		{% endblock %}
 	</title>
+	<link rel="stylesheet" href="{% static 'general/style/reset.css' %}">
 	<link rel="stylesheet" href="{% static 'indexapp/style.css' %}">
 </head>
 <body>
 
 	<script type="text/javascript">
-// https://jsfiddle.net/
-
-//	var answer = Match.random(); // случайное число от 0 до 1
-//	var answer = parseInt(Match.random() * 100); // случайное целое число от 0 до 100
-//	eur.toFixed(2) // округление до 2 знаков после запятой
+		'use strict';
 		function start_program() {
 
 			var selection = parseInt(prompt("Введите:\n1 для выбора конверетра валют;\n2 для игры в загадки;\n3 для вычисления уравнения\n4 банковская программа (рассчёт прибыли по вкладу)."));
@@ -105,22 +102,22 @@
 
 	</script>
 
-	<div id="header">
+	<header>
 		<a href="{% url 'index' %}">Главная</a> <span>/</span>
 		<a href="{% url 'learn' %}">Учёба</a> <span>/</span>
 		<a href="{% url 'work' %}">Работа</a> <span>/</span>
 		<a href="javascript:arcana();">Загадки</a> <span>/</span>
 		<a href="javascript:start_program();">Все программы</a> <span>/</span>
-	</div>
+	</header>
 
-	<div id="content">
+	<section>
 		{% block contetnt %}
 		{% endblock %}
-	</div>
+	</section>
 
-	<div id="footer">
-	Copyright © 2016 <a href="https://geekbrains.ru/">GeekBrains </a>
-	</div>
+	<footer>
+	Copyright © 2016 <a href="http://allworld.xyz/django/profile_ig/" target="_blank">Иван Борисович Голубых</a>
+	</footer>
 
 </body>
 </html>
