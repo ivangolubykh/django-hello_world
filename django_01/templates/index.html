@@ -7,17 +7,20 @@
 
 {% block contetnt %}
     <h1>Личный сайт Ивана Голубых</h1>
-    <div>
+    <div class="img_myfoto">
         <img src="{% static 'indexapp/img/ivan-tenerife.gif' %}"></img>
-        <div id="box_text">
-            <p>
-                Добрый день. Меня зовут <b>Иван Голубых</b>. Я - <i>программист</i>. Этот сайт создан в рамках курса по <a href="https://geekbrains.ru/go/SS~PUR" target="_blank">основам программирования</a> (Java Script, HTML&amp;CSS) и доработан на Django (Python) на <a href="https://geekbrains.ru/go/qN49Bx" target="_blank">курсе по Django</a>.
-            </p>
-            <p>Я родился в {{birth_date|date:'Y'}} году и увлекаюсь программированием с прошлого тысячелетия, с эпохи "до интернета", но только сейчас оно становится моей основной профессией.</p>
+    </div><!--
+    --><div>
+        <p>
+            Добрый день. Меня зовут <b>Иван Голубых</b>. Я - <i>программист</i>. Этот сайт создан в рамках курса по <a href="https://geekbrains.ru/go/SS~PUR" target="_blank">основам программирования</a> (Java Script, HTML&amp;CSS) и доработан на Django (Python) на <a href="https://geekbrains.ru/go/qN49Bx" target="_blank">курсе по Django</a>.
+        </p>
+        <p>
+            Я родился в {{birth_date|date:'Y'}} году и увлекаюсь программированием с прошлого тысячелетия, с эпохи "до интернета", но только сейчас оно становится моей основной профессией.
+        </p>
 
-            <p>
+        <p>
             На этом сайте вы сможете сыграть в игры, которые я написал.
-            </p>
-        </div>
+        </p>
     </div>
+
 {% endblock %}

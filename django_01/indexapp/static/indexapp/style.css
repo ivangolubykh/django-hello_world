@@ -21,7 +21,9 @@ body {
 
 .wrapper_over_footer {
     min-height: 100%;
+    padding-bottom: 75px;
 }
+
 
 header {
     border: 1px solid #b5b7ba;
@@ -42,6 +44,7 @@ header span {
     padding: 0 15px;
 }
 
+
 .content {
 	line-height: 1;
 }
@@ -55,105 +58,43 @@ header span {
     margin-bottom: 30px;
 }
 
-
-
-
-
-.content h3 {
-    color: #242424;
-    font-size: 35px;
-    font-weight: 300;
-    text-align: left;
-    margin-left: 41px;
-    margin-bottom: 52px;
+.img_myfoto {
+    display: inline-block;
+    width: 33%;
+    /*min-width: 200px;*/
+    padding: 0;
+    margin: 0;
+    border: 0;
+    vertical-align: top;
+    text-align: center
 }
 
-.content h5 {
-    color:  #242424;
-    font-size: 24px;
-    text-align: left;
+.img_myfoto img {
+    width: calc(100% - 10px);
 }
 
-.content img {
-    margin-left: 17px;
-}
+.img_myfoto + div {
+    display: inline-block;
+    width: calc(67%);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: top;
 
-.content #box_text {
-    width: 671px;
-    background-color: #ffffff;
-    float: right;
-    padding: 49px 48px 51px 76px;
-}
-
-.content #box_text p {
-    color: #242424;
     font-size: 24px;
     font-weight: 100;
-    text-align: left;
-    margin-bottom: 31px;
 }
 
-.content #box_text a  {
+.img_myfoto + div p {
+    color: #242424;
+    padding: 10px;
+    text-align: justify;
+}
+
+.img_myfoto + div a {
+    text-decoration: none;
     color: #40678a;
-    font-size: 24px;
-    font-weight: 100;
-    text-align: center;
-    text-decoration: none;
-    padding-right:30px;
 }
-
-
-.content .media {
-    margin-right: 0;
-}
-
-.content #box {
-    background-color: #ffffff;
-    /*width: 1238px;*/
-    height: 446px;
-    margin: 0 auto;
-    padding-top: 37px;
-    padding-left: 38px;
-}
-
-.content #box p {
-    color: #242424;
-    font-size: 24px;
-    font-weight: 100;
-    text-align: left;
-    margin-top: 37px;
-    margin-bottom: 30px;
-}
-
-.content #box input {
-    border: 1px solid #a0a0a0;
-    background-color: #f5f5f5;
-    width: 457px;
-    height: 34px;
-    padding-left:10px;
-    font-size:20px;
-    font-weight: 100;
-    margin-bottom: 12px;
-}
-
-.content #box a {
-    display: block;
-    float: left;
-    background-color:  #8cbbd3;
-    color:  #ffffff;
-    font-size: 24px;
-    font-weight: 300;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 30px;
-    padding:11px 51px;
-}
-
-.content #box a:hover {
-    background-color: #5ba1d3;
-}
-
-
 
 
 
@@ -182,4 +123,15 @@ footer p {
 
 footer a {
     color: inherit;
+}
+
+
+@media screen and (max-width:450px) {
+ /*Display 1024px and later */
+    .img_myfoto {
+        width: 100%;
+    }
+    .img_myfoto + div {
+        width: 100%;
+    }
 }
