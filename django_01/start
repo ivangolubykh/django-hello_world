@@ -1,2 +1,14 @@
 ./manage.py collectstatic
 ./manage.py runserver
+
+
+# Применение изменений в БД:
+#./manage.py makemigrations indexapp
+#./manage.py migrate indexapp
+
+# Сохранение БД приложения indexapp в формате JSON с отступами 2 пробела:
+#mkdir ./indexapp/fixtures
+#./manage.py dumpdata indexapp --indent 2 > ./indexapp/fixtures/startdata.json
+
+#Восстановление БД:
+#./manage.py loaddata startdata.json
