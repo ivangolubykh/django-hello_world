@@ -17,6 +17,10 @@ body {
 	margin: 0 auto;
     background-color: #f7f7f7;
     font-family: 'Roboto', sans-serif;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+
 }
 
 .wrapper_over_footer {
@@ -89,6 +93,7 @@ header span {
     color: #242424;
     padding: 10px;
     text-align: justify;
+    text-indent: 2ex;
 }
 
 .img_myfoto + div a {
@@ -101,7 +106,7 @@ header span {
 footer {
     height: 70px;
     margin-top: -72px;
-    background-color: #C0C0C0;
+    background-color: #dfdfdf;
     border: 1px solid #b5b7ba;
     text-align: center;
     color: #010435;
