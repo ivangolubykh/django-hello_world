@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-
 {% block title %}Учёба - Голубых Иван Борисович{% endblock %}
-
 
 {% block contetnt %}
     <h1>Иван Борисович Голубых - Учёба</h1>
@@ -11,11 +9,15 @@
         <img src="{% static 'indexapp/img/ivan-tenerife.gif' %}"></img>
     </div><!--
     --><div>
-        {% if not learn_chronology %}
+        {% if not learn_places %}
         <p>Данные о моей учёбе недоступны в настощее время.</p>
         {% else %}
-            {% for learn in learn_chronology reversed %}
-                <p>{{learn|safe}}</p>
+            {% for learn in learn_places %}
+                <p>{{learn.date_end|date:'Y'}} г. <a href="{{ learn.site }}" target="_blank">{{learn.name}}</a>.
+                {% if learn.speciality %}
+                    Специальность: {{ learn.speciality|lower|safe }}
+                {% endif %}
+                </p>
             {% endfor %}
         {% endif %}
     </div>
