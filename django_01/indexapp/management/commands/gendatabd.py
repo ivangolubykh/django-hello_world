@@ -3,7 +3,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from indexapp.models import Work, Learn
 import random
-from indexapp.models import Work, Learn
+from indexapp.models import Work, Learn, Organization
 from datetime import date
 
 
@@ -38,15 +38,22 @@ class Command(BaseCommand):
                 data.name = str(i) + self.gen_string(random.randint(10, 1500))
                 data.speciality = str(i) + self.gen_string(random.randint(0, 128))
                 data.save()
+
+                data = Organization()
+                data.name = str(i) + self.gen_string(random.randint(10, 1500))
+                data.region = str(i) + self.gen_string(random.randint(1, 64))
+                data.site = 'http://' + str(i) + self.gen_string(random.randint(5, 128))
+                data.address = str(i) + self.gen_string(random.randint(0, 1500))
+                data.save()
+
                 data = Work()
                 data.date_start = date(random.randint(1980, 2016), random.randint(1, 12), random.randint(1, 28))
                 # Не стал заморачиваться с тем, что дата увольнения может получиться раньше даты приёма на работу - для тестовых данных это не важно:
                 data.date_end = date(random.randint(1980, 2016), random.randint(1, 12), random.randint(1, 28))
-                data.site = 'http://' + str(i) + self.gen_string(random.randint(5, 128))
-                data.name = str(i) + self.gen_string(random.randint(10, 1500))
-                data.region = str(i) + self.gen_string(random.randint(1, 64))
                 data.position = str(i) + self.gen_string(random.randint(5, 64))
                 data.descr = str(i) + self.gen_string(random.randint(5, 5007))
+                data.organization = Organization.objects.get(id=(random.randint(1, i)))
+#                data.organization = int(random.randint(1, i))
                 data.save()
 
-            print('Обработка завершена. В Work и в Learn добавлено по ' + str(amount - 1) + ' новых записей')
+            print('Обработка завершена. В Work? d Organization и в Learn добавлено по ' + str(amount - 1) + ' новых записей')

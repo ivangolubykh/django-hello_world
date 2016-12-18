@@ -13,3 +13,6 @@
 
 #Восстановление БД:
 #./manage.py loaddata startdata.json
+
+# генерация случайных записей:
+#./manage.py gendatabd 7
