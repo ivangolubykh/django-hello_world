@@ -16,9 +16,9 @@ def learn(request):
 
 
 def org_card(request, num):
-    work_places = Work.objects.values('date_start', 'date_end', 'position', 'descr', 'organization__name', 'organization__region', 'organization__site', 'organization__address').order_by('-date_start')
-    return render_to_response("work.html", {'work_places': work_places})
+    org_places = Work.objects.values('date_start', 'date_end', 'position', 'descr', 'organization__name', 'organization__region', 'organization__site', 'organization__address').order_by('-date_start')
+    return render_to_response("org_card.html", {'org_places2': org_places})
 
 def work(request):
-    work_places = Work.objects.values('date_start', 'date_end', 'position', 'descr', 'organization__name', 'organization__region', 'organization__site', 'organization__address').order_by('-date_start')
+    work_places = Work.objects.values('date_start', 'date_end', 'position', 'descr', 'organization', 'organization__name', 'organization__region', 'organization__address').order_by('-date_start')
     return render_to_response("work.html", {'work_places': work_places})
