@@ -2,7 +2,7 @@ from django.shortcuts import render, render_to_response
 from datetime import datetime, date
 # Create your views here.
 
-from .models import Work, Learn
+from .models import Learn, Organization, Work
 
 
 def index(request):
@@ -16,8 +16,8 @@ def learn(request):
 
 
 def org_card(request, num):
-    org_places = Work.objects.values('date_start', 'date_end', 'position', 'descr', 'organization__name', 'organization__region', 'organization__site', 'organization__address').order_by('-date_start')
-    return render_to_response("org_card.html", {'org_places2': org_places})
+    org_places = Organization.objects.filter(id = num)
+    return render_to_response("org_card.html", {'org_places': org_places})
 
 def work(request):
     work_places = Work.objects.values('date_start', 'date_end', 'position', 'descr', 'organization', 'organization__name', 'organization__region', 'organization__address').order_by('-date_start')

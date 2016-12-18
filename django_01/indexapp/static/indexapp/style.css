@@ -28,7 +28,6 @@ body {
     padding-bottom: 75px;
 }
 
-
 header {
     border: 1px solid #b5b7ba;
     background-color: #dfdfdf;
@@ -51,7 +50,24 @@ header span {
 
 .content {
 	line-height: 1;
+
+    font-size: 24px;
+    font-weight: 100;
 }
+
+.content div p {
+    color: #242424;
+    padding: 10px;
+    text-align: justify;
+    text-indent: 2ex;
+}
+
+.content div a {
+    text-decoration: none;
+    color: #40678a;
+}
+
+
 
 .content h1 {
     text-align: center;
@@ -84,22 +100,8 @@ header span {
     padding: 0;
     border: 0;
     vertical-align: top;
-
-    font-size: 24px;
-    font-weight: 100;
 }
 
-.img_myfoto + div p {
-    color: #242424;
-    padding: 10px;
-    text-align: justify;
-    text-indent: 2ex;
-}
-
-.img_myfoto + div a {
-    text-decoration: none;
-    color: #40678a;
-}
 
 
 
