@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^django/profile_ig/', include([
         url(r'^$', index, name='index'),
         url(r'^learn/$', learn, name='learn'),
+        url(r'^org_card/([\d+])/$', org_card, name='org_card'),
         url(r'^work/$', work, name='work'),
     ])),
 ]

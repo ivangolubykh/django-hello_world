@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Работа - Голубых Иван Борисович{% endblock %}
+
+{% block contetnt %}
+    <h1>Иван Борисович Голубых - Работа</h1>
+    <div class="img_myfoto">
+        <img src="{% static 'indexapp/img/ivan-tenerife.gif' %}"></img>
+    </div><!--
+    --><div>
+        {% if not work_places %}
+        <p>Данные о местах моей работы недоступны в настощее время.</p>
+        {% else %}
+            {% for work in work_places %}
+                <p>С {{work.date_start|date:'E Y'}} г. по {{work.date_end|date:'F Y'|lower}} г.
+                    <a href="{{ work.organization__site }}" target="_blank">{{ work.organization__name }}</a>, {{ work.organization__region }}.
+                    <br>&nbsp;Должность: {{ work.position|lower }}. {{ work.descr|safe }}
+                </p>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
