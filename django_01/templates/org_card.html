@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Карточка организации{% endblock %}
+
+{% block contetnt %}
+    <h1>Карточка организации (места работы)</h1>
+    <div>
+        {% if not org_places %}
+        <p>Данные о данной организации отсутствуют.</p>
+        {% else %}
+            <p>Наименование организации: <strong style="font-style: italic">{{ org_places.0.name }}</strong></p>
+            <p>Регион: <strong style="font-style: italic">{{ org_places.0.region }}</strong></p>
+            <p>Адрес сайта:
+                {% if not org_places.0.site %}
+                    <strong style="font-style: italic">нет действующего официального сайта.</strong>
+                {% else %}
+                    <a href="{{ org_places.0.site }}" target="_blank">{{ org_places.0.site }}</a>
+                {% endif %}
+            </p>
+            <p>Адрес организации:
+                {% if not org_places.0.address %}
+                    <strong style="font-style: italic">данные о действующем адресе компании отсутствуют.</strong>
+                {% else %}
+                    <strong style="font-style: italic">{{ org_places.0.address }}</strong>
+                {% endif %}
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}

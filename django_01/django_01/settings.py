@@ -23,9 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8hp2&9e-3n3d()%)te0zkz2#@p&wees5eaa=w*_4^$q&s$lw6k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Отладка - надо отключить на боевом сервере !!!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Список хостов|IP, на которых принимается подключение (при DEBUG = False - заполнять обязательно)
+# Так же при DEBUG = False статика не отдается - её сервер отдавать должен.
+#ALLOWED_HOSTS = ['127.0.0.1']
+
 
 
 # Application definition
