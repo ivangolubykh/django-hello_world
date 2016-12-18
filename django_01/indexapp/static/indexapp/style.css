@@ -20,7 +20,6 @@ body {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
-
 }
 
 .wrapper_over_footer {
@@ -48,14 +47,13 @@ header span {
 }
 
 
-.content {
+.content, work_last_view  {
 	line-height: 1;
-
     font-size: 24px;
     font-weight: 100;
 }
 
-.content div p {
+.content div p, work_last_view {
     color: #242424;
     padding: 10px;
     text-align: justify;
@@ -102,6 +100,15 @@ header span {
     vertical-align: top;
 }
 
+.work_last_view > input + div {
+    position: absolute;
+    display: none;
+}
+
+.work_last_view > input:checked + div {
+    position: relative;
+    display: inherit;
+}
 
 
 
