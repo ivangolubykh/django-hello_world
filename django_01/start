@@ -1,4 +1,5 @@
 #./manage.py collectstatic
+#./manage.py runserver [::1]:8000
 ./manage.py runserver
 
 

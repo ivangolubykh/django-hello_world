@@ -16,5 +16,5 @@ def learn(request):
 
 
 def work(request):
-    work_places = Work.objects.order_by('-date_start')
+    work_places = Work.objects.values('date_start', 'date_end', 'position', 'descr', 'organization__name', 'organization__region', 'organization__site', 'organization__address').order_by('-date_start')
     return render_to_response("work.html", {'work_places': work_places})

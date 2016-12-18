@@ -14,7 +14,7 @@
         {% else %}
             {% for work in work_places %}
                 <p>С {{work.date_start|date:'E Y'}} г. по {{work.date_end|date:'F Y'|lower}} г.
-                    <a href="{{ work.site }}" target="_blank">{{ work.name }}</a>, {{ work.region }}.
+                    <a href="{{ work.organization__site }}" target="_blank">{{ work.organization__name }}</a>, {{ work.organization__region }}.
                     <br>&nbsp;Должность: {{ work.position|lower }}. {{ work.descr|safe }}
                 </p>
             {% endfor %}
