@@ -26,5 +26,6 @@ urlpatterns = [
         url(r'^learn/$', learn, name='learn'),
         url(r'^org_card/([\d+])/$', org_card, name='org_card'),
         url(r'^work/$', work, name='work'),
+        url(r'^work_ajax/$', work_ajax, name='work_ajax'),
     ])),
 ]
